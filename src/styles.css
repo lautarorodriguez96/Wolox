@@ -1,1 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
+.green {
+    color: #A3CC39;
+}
+
+.cian {
+    color: #2AA7DF;
+}
+
+.text-error {
+    color: red;
+    font-weight: 600;
+    display: block;
+    margin-bottom: 10px;
+}
