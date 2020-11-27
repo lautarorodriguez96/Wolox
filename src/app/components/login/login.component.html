@@ -1,4 +1,4 @@
-<div  class="login">  
+<!--<div  class="login">  
     <p class="title_login">Iniciar Sesión</p>    
     <input type="text"  placeholder="Nombre" class="input_textual"/>    
     <input type="text" placeholder="Apellido" class="input_textual"/>  
@@ -9,4 +9,35 @@
     <input type="password" placeholder="Contraseña" class="input_textual"/>    
     <a href="#">¿olvidaste tu contraseña?</a>    
     <button class="input_boton"> Ingresar </button>    
-</div>
+</div>-->
+
+<form autocomplete="off" [formGroup]="formu" (ngSubmit)="guardar()">
+    <div class="login">   
+        <p class="title_login">Iniciar Sesión</p>
+        <input class="input_textual" type="text" placeholder="Nombre" formControlName="nombre"
+            [class.is-invalid]="nombreNoValido">
+        <small *ngIf="nombreNoValido" class="text-error">Ingrese un valor</small>
+        <input class="input_textual" type="text" placeholder="Apellido" formControlName="apellido"
+            [class.is-invalid]="apellidoNoValido">
+        <small *ngIf="apellidoNoValido" class="text-error">Ingrese un valor</small>
+        <input class="input_textual" type="email" placeholder="Correo electrónico" formControlName="email"
+            [class.is-invalid]="emailNoValido">
+        <small *ngIf="emailNoValido" class="text-error">Ingrese un valor</small>
+        <input class="input_textual" type="number" placeholder="Teléfono" formControlName="telefono"
+            [class.is-invalid]="telefonoNoValido">
+        <small *ngIf="telefonoNoValido" class="text-error">Ingrese un valor</small>
+        <input class="input_textual" type="text" placeholder="Pais" formControlName="pais"
+            [class.is-invalid]="paisNoValido">
+        <small *ngIf="paisNoValido" class="text-error">Ingrese un valor</small>
+        <input class="input_textual" type="text" placeholder="Provincia" formControlName="provincia"
+            [class.is-invalid]="provinciaNoValido">
+        <small *ngIf="provinciaNoValido" class="text-error">Ingrese un valor</small>
+        <input class="input_textual" type="password" placeholder="Contraseña" formControlName="contrasenia"
+            [class.is-invalid]="contraseniaNoValido">
+        <small *ngIf="contraseniaNoValido" class="text-error">Ingrese un valor</small>    
+        <a href="#">¿olvidaste tu contraseña?</a>    
+        <button type="submit" class="input_boton" (click)="guardar()">
+            Guardar
+        </button>
+    </div>
+</form>

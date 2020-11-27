@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-
 import { HttpClient } from '@angular/common/http';
 
 @Injectable({
@@ -7,33 +6,26 @@ import { HttpClient } from '@angular/common/http';
   })
 export class WoloxServices{
 
-    private wolox:Wolox[] = [
+    //private wolox:Wolox[] = [];    
 
-    ];    
+    constructor(private _http: HttpClient){  }
 
-    constructor(private _http: HttpClient){
-    
-        console.log("servicio listo");
+
+    getListTechs() {
+        return this._http.get('http://private-8e8921-woloxfrontendinverview.apiary-mock.com/techs');
     }
 
-    /*getBares(){
-        return this.bares;
+    /*getLogin() {
+      return this._http.post('http://private-8e8921-woloxfrontendinverview.apiary-mock.com/login');
     }
 
-    getBar(i: string){
-      return this.bares[i];
-    }
-
-    getWolox(structureDate, country) {
-        http://private-8e8921-woloxfrontendinverview.apiary-mock.com/techs
-        return this._http.get<any>(
-          `/structure/byDate/${structureDate}/${country}`
-        );
-      }*/
+    getSignUp() {
+      return this._http.post('http://private-8e8921-woloxfrontendinverview.apiary-mock.com/signup');
+    }*/
 }
 
 
-export interface Wolox {
+/*export interface Wolox {
     nombre: string;
     apellido: string;
     email: string;
@@ -41,4 +33,4 @@ export interface Wolox {
     cuit: string;
     horario: string;
     estacionamiento: string;
-};
+};*/
