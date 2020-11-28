@@ -3,10 +3,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { MatTableModule } from '@angular/material/table';
 import { MatInputModule } from '@angular/material/input';
+import { NgSelectModule } from '@ng-select/ng-select';
 
 import { HttpClientModule } from '@angular/common/http';
 
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { NavbarComponent } from './components/shared/navbar/navbar.component';
 import { HomeComponent } from './components/home/home.component';
@@ -21,7 +22,6 @@ import { APP_ROUTING } from './app.routes'
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
-import { from } from 'rxjs';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSortModule } from '@angular/material/sort';
 
@@ -40,16 +40,19 @@ import { MatSortModule } from '@angular/material/sort';
     HttpClientModule,
     APP_ROUTING,
     ReactiveFormsModule,
+    FormsModule,
     MatTableModule,
     MatFormFieldModule,
     MatSortModule,
-    MatInputModule
+    MatInputModule,
+    NgSelectModule
   ],
   exports: [
     MatTableModule,
     MatFormFieldModule,
     MatSortModule,
-    MatInputModule
+    MatInputModule,
+    NgSelectModule
   ],
   providers: [
     WoloxServices

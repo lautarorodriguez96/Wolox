@@ -143,16 +143,19 @@
     border: 1px solid #ddd;
     border-radius: 2px;
   }
+
   .login .input_textual {
     color: #444;
     font-size: 1.1em;
   }
+
   .login .input_textual:focus {
     outline: none;
     border: none;
     border-left: 13px solid #2AA7DF;
     box-shadow: 1px 5px 10px #CCC;
   }
+  
   .login .input_textual:focus {
     opacity: 1;
     left: 30px;
@@ -170,6 +173,10 @@
   .login a:hover {
     color: #2AA7DF;
     border-color: #FFF;
+  }
+
+  .login .check {
+    margin-top: 40px;
   }
   
   .login .input_boton {
@@ -196,3 +203,4 @@
   .login .input_boton .fa {
     font-size: 1.4em;
   }
+

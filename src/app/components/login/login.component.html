@@ -13,31 +13,95 @@
 
 <form autocomplete="off" [formGroup]="formu" (ngSubmit)="guardar()">
     <div class="login">   
-        <p class="title_login">Iniciar Sesión</p>
+        <p class="title_login">Iniciar Sesión</p>   
+
         <input class="input_textual" type="text" placeholder="Nombre" formControlName="nombre"
             [class.is-invalid]="nombreNoValido">
         <small *ngIf="nombreNoValido" class="text-error">Ingrese un valor</small>
+
         <input class="input_textual" type="text" placeholder="Apellido" formControlName="apellido"
             [class.is-invalid]="apellidoNoValido">
         <small *ngIf="apellidoNoValido" class="text-error">Ingrese un valor</small>
+
         <input class="input_textual" type="email" placeholder="Correo electrónico" formControlName="email"
             [class.is-invalid]="emailNoValido">
-        <small *ngIf="emailNoValido" class="text-error">Ingrese un valor</small>
+        <small *ngIf="emailNoValido" class="text-error">Ingrese un valor formato válido</small>
+
         <input class="input_textual" type="number" placeholder="Teléfono" formControlName="telefono"
             [class.is-invalid]="telefonoNoValido">
-        <small *ngIf="telefonoNoValido" class="text-error">Ingrese un valor</small>
-        <input class="input_textual" type="text" placeholder="Pais" formControlName="pais"
-            [class.is-invalid]="paisNoValido">
+        <small *ngIf="telefonoNoValido" class="text-error">Ingrese un valor - máximos 10 caracteres</small>
+
+        <select class="input_textual" [(ngModel)]="paisSeleccionado" formControlName="pais" (change)="capturarPais()" [class.is-invalid]="paisNoValido">
+            <option value="0">Selecciona una opción</option>
+            <option *ngFor="let pais of paises" [value]="pais.id">{{pais.name}}</option>
+        </select>   
         <small *ngIf="paisNoValido" class="text-error">Ingrese un valor</small>
-        <input class="input_textual" type="text" placeholder="Provincia" formControlName="provincia"
-            [class.is-invalid]="provinciaNoValido">
+        
+        <select class="input_textual" [(ngModel)]="provinciaSeleccionada" formControlName="provincia" (change)="capturarProvincia()" [class.is-invalid]="provinciaNoValido">
+            <option value="0">Selecciona una opción</option>
+            <option *ngFor="let provincia of provincia" [value]="provincia.id">{{provincia.name}}</option>
+        </select>   
         <small *ngIf="provinciaNoValido" class="text-error">Ingrese un valor</small>
+
         <input class="input_textual" type="password" placeholder="Contraseña" formControlName="contrasenia"
             [class.is-invalid]="contraseniaNoValido">
-        <small *ngIf="contraseniaNoValido" class="text-error">Ingrese un valor</small>    
-        <a href="#">¿olvidaste tu contraseña?</a>    
+        <small *ngIf="contraseniaNoValido" class="text-error">Ingrese un valor minimo 6 caracteres</small>
+
+        <input class="input_textual" type="password" placeholder="Repetir contraseña" formControlName="contrasenia2"
+        [class.is-invalid]="contrasenia2NoValido">
+        <!-- <small *ngIf="contrasenia2NoValido" class="text-error">Ingrese un valor minimo 6 caracteres</small>-->
+
+        <a href="#">¿olvidaste tu contraseña?</a>
+        
+                
+        <div class="check">
+            <input type="checkbox">Acepto Términos y Condiciones
+        </div>
+
         <button type="submit" class="input_boton" (click)="guardar()">
             Guardar
         </button>
     </div>
 </form>
+
+
+<hr>
+<pre>
+    Estado del Formulario: {{ formu.valid }}
+    <br>
+    Estado: {{ formu.status }}
+</pre>
+<pre>
+    {{ formu.value | json }}
+</pre>
+
+<!--<div class="row">
+    <div class="col">
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Nombre</th>
+                    <th>Domicilio</th>
+                    <th>Email</th>
+                    <th>Teléfono</th>
+                    <th>Pais</th> 
+                    <th>Horario</th>
+                    <th>Estacionamiento</th>
+                    <th>Borrar</th>  
+                </tr>
+            </thead>
+            <tbody formArrayName="resultados"> 
+                <tr *ngFor="let la of resultados.controls; let i = index">
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    <td> <button type="submit" class="btn btn-danger">Borrar</button> </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div> -->

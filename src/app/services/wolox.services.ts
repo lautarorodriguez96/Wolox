@@ -6,6 +6,8 @@ import { HttpClient } from '@angular/common/http';
   })
 export class WoloxServices{
 
+    paises: { id: number; name: string; }[];
+
     //private wolox:Wolox[] = [];    
 
     constructor(private _http: HttpClient){  }
