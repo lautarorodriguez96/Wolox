@@ -1,12 +1,8 @@
-/*footer {
-    background-color: #343A40;
-    color: white;
+footer {
     width: 100%;
-    position: fixed;
     bottom: 0px;
     text-align: center;
-    padding: 15px    
-}*/
+}
 
 .footer{
     background: url("../../../../assets/assets/Backgrounds/Bg_Footer.png") no-repeat center center; 
@@ -18,9 +14,13 @@
 }
 
 .text-title{
-    color: #0c0c0c;
     font-weight: 600;
     text-align: center;
+    padding-top: 40px;
+}
+
+.text-subtitle{
+    padding-bottom: 15px;
 }
 
 .btn {
@@ -42,11 +42,15 @@
     border: solid #00C3FF 1px;
 }
 
-.btn-center {
-    margin-left: 47%;
-}
-
 .brand {
     color: #00C3FF;
+}
+
+.logo-footer {
+    position: relative;
+    width: 100px;
+    display: flex;
+    left: 46%;
+    top: 27%;
 }
 
