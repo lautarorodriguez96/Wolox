@@ -148,7 +148,7 @@ export class LoginComponent implements OnInit {
       case '5':
         this.provincia = this.ecuador; 
         break;
-      default: '0'
+      default: ''
         break;
     }
   }

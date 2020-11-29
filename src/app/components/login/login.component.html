@@ -1,16 +1,3 @@
-<!--<div  class="login">  
-    <p class="title_login">Iniciar Sesión</p>    
-    <input type="text"  placeholder="Nombre" class="input_textual"/>    
-    <input type="text" placeholder="Apellido" class="input_textual"/>  
-    <input type="text"  placeholder="Pais" class="input_textual"/>    
-    <input type="text" placeholder="Provincia" class="input_textual"/>  
-    <input type="email"  placeholder="Correo" class="input_textual"/>  
-    <input type="number"  placeholder="Telefono" class="input_textual"/>    
-    <input type="password" placeholder="Contraseña" class="input_textual"/>    
-    <a href="#">¿olvidaste tu contraseña?</a>    
-    <button class="input_boton"> Ingresar </button>    
-</div>-->
-
 <form autocomplete="off" [formGroup]="formu" (ngSubmit)="guardar()">
     <div class="login">   
         <p class="title_login">Iniciar Sesión</p>   
@@ -33,13 +20,13 @@
 
         <select class="input_textual" [(ngModel)]="paisSeleccionado" formControlName="pais" (change)="capturarPais()" [class.is-invalid]="paisNoValido">
             <option value="0">Selecciona una opción</option>
-            <option *ngFor="let pais of paises" [value]="pais.id">{{pais.name}}</option>
+            <option *ngFor="let pais of paises" [value]="pais.name">{{pais.name}}</option>
         </select>   
         <small *ngIf="paisNoValido" class="text-error">Ingrese un valor</small>
         
         <select class="input_textual" [(ngModel)]="provinciaSeleccionada" formControlName="provincia" (change)="capturarProvincia()" [class.is-invalid]="provinciaNoValido">
             <option value="0">Selecciona una opción</option>
-            <option *ngFor="let provincia of provincia" [value]="provincia.id">{{provincia.name}}</option>
+            <option *ngFor="let provincia of provincia" [value]="provincia.name">{{provincia.name}}</option>
         </select>   
         <small *ngIf="provinciaNoValido" class="text-error">Ingrese un valor</small>
 
@@ -51,11 +38,10 @@
         [class.is-invalid]="contrasenia2NoValido">
         <!-- <small *ngIf="contrasenia2NoValido" class="text-error">Ingrese un valor minimo 6 caracteres</small>-->
 
-        <a href="#">¿olvidaste tu contraseña?</a>
-        
+        <a href="#">¿olvidaste tu contraseña?</a>        
                 
         <div class="check">
-            <input type="checkbox">Acepto Términos y Condiciones
+            <input type="checkbox" required>Acepto Términos y Condiciones
         </div>
 
         <button type="submit" class="input_boton" (click)="guardar()">
@@ -74,34 +60,3 @@
 <pre>
     {{ formu.value | json }}
 </pre>
-
-<!--<div class="row">
-    <div class="col">
-        <table class="table">
-            <thead class="thead-dark">
-                <tr>
-                    <th>Nombre</th>
-                    <th>Domicilio</th>
-                    <th>Email</th>
-                    <th>Teléfono</th>
-                    <th>Pais</th> 
-                    <th>Horario</th>
-                    <th>Estacionamiento</th>
-                    <th>Borrar</th>  
-                </tr>
-            </thead>
-            <tbody formArrayName="resultados"> 
-                <tr *ngFor="let la of resultados.controls; let i = index">
-                    <td> </td>
-                    <td> </td>
-                    <td> </td>
-                    <td> </td>
-                    <td> </td>
-                    <td> </td>
-                    <td> </td>
-                    <td> <button type="submit" class="btn btn-danger">Borrar</button> </td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-</div> -->

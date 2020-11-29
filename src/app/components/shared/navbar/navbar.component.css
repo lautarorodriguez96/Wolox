@@ -13,7 +13,7 @@ nav {
 }
 
 .img-logo {
-    width: 10%;
+    width: 100px;
 }
     
 ul {
@@ -32,7 +32,7 @@ a:hover {
     text-decoration: none;
 }
 .menu li {
-    font-size: 16px;
+    font-size: 15px;
     padding: 15px 5px;
     white-space: nowrap;
 }
@@ -66,7 +66,6 @@ a:hover {
     #444 solid; 
 }
     
-/* Desktop menu */
 @media all and (min-width: 900px) {
     .item { 
         display: block; 
@@ -91,9 +90,8 @@ a:hover {
         padding-right: 0;
     } 
 }
-    
-/* Tablet menu */ 
-@media all and (min-width: 600px) { 
+
+@media all and (min-width: 300px) { 
     .menu { 
         justify-content: center; 
     }
@@ -115,11 +113,7 @@ a:hover {
     .button.secondary { 
         border: 0;
     } 
-    /*.button a { 
-        padding: 7.5px 15px;*/
-        /*background: teal; */
-        /*border: 1px #006d6d solid;
-    }*/
+
     .button.secondary a { 
         background: transparent;
     }
@@ -133,9 +127,12 @@ a:hover {
     .button.secondary a:hover { 
         color: #ddd;
     } 
+    .img-logo {
+        width: 100px;
+    }
 }
     
-/* Mobile menu */ 
+
 .menu { 
     display: flex;
     flex-wrap: wrap; 
