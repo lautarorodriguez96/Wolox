@@ -4,12 +4,12 @@ import { MatTableDataSource } from '@angular/material/table';
 import { WoloxServices } from 'src/app/services/wolox.services';
 
 @Component({
-  selector: 'app-formulario',
-  templateUrl: './formulario.component.html',
-  styleUrls: ['./formulario.component.css']
+  selector: 'app-list',
+  templateUrl: './list.component.html',
+  styleUrls: ['./list.component.css']
 })
 
-export class FormularioComponent implements OnInit {
+export class ListComponent implements OnInit {
 
   techs: any [] = [];
 
@@ -17,7 +17,7 @@ export class FormularioComponent implements OnInit {
   dataSource = new MatTableDataSource<EstructureElement>(ELEMENT_DATA);
   @ViewChild(MatSort) sort: MatSort;
   totalTechs: any;
-  favorite: any;
+  favorite: any [];
 
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
@@ -26,7 +26,7 @@ export class FormularioComponent implements OnInit {
 
   constructor( private _woloxServices: WoloxServices) {     
     this._woloxServices.getListTechs().subscribe((rta:any) => {  
-      this.techs = rta
+      this.techs = rta;
       this.dataSource = new MatTableDataSource(this.techs);
       this.dataSource.sort = this.sort;
       this.totalTechs = rta.length;      
@@ -43,6 +43,26 @@ export class FormularioComponent implements OnInit {
     console.log(this.favorite, 'favorito')
     //localStorage.setItem("formulario", JSON.stringify(this.formu.value));
   }
+  
+
+  
+	/*deleteDestinatario(destinatario) {
+		this.tableDestinatariosExternos.splice(destinatario.row, 1);
+	}
+
+	addDestinatario() {
+		if (this.destinoDestinatario && this.usuarioDestinatario) {
+			let newDestinatario = {
+				usuario: this.usuarioDestinatario,
+				destino: this.destinoDestinatario,
+			};
+
+			this.destinoDestinatario = '';
+			this.usuarioDestinatario = '';
+
+			this.tableDestinatariosExternos.push(newDestinatario);
+		}
+	}*/
 
 }
 

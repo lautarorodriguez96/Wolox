@@ -20,13 +20,13 @@
 
         <select class="input_textual" [(ngModel)]="paisSeleccionado" formControlName="pais" (change)="capturarPais()" [class.is-invalid]="paisNoValido">
             <option value="0">Selecciona una opción</option>
-            <option *ngFor="let pais of paises" [value]="pais.name">{{pais.name}}</option>
+            <option *ngFor="let pais of paises" [value]="pais.id">{{pais.name}}</option>
         </select>   
         <small *ngIf="paisNoValido" class="text-error">Ingrese un valor</small>
         
         <select class="input_textual" [(ngModel)]="provinciaSeleccionada" formControlName="provincia" (change)="capturarProvincia()" [class.is-invalid]="provinciaNoValido">
             <option value="0">Selecciona una opción</option>
-            <option *ngFor="let provincia of provincia" [value]="provincia.name">{{provincia.name}}</option>
+            <option *ngFor="let provincia of provincia" [value]="provincia.id">{{provincia.name}}</option>
         </select>   
         <small *ngIf="provinciaNoValido" class="text-error">Ingrese un valor</small>
 
@@ -49,14 +49,3 @@
         </button>
     </div>
 </form>
-
-
-<hr>
-<pre>
-    Estado del Formulario: {{ formu.valid }}
-    <br>
-    Estado: {{ formu.status }}
-</pre>
-<pre>
-    {{ formu.value | json }}
-</pre>

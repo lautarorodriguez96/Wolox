@@ -1,7 +1,7 @@
   * {
     transition: .4s;
-    box-sizing: border-box;
-    font-family: 'arial';
+    box-sizing: border-box;    
+    font-family: "Fire_Sans", Arial, Helvetica, sans-serif;
   }
   
   ::selection {

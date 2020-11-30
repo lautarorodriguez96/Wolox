@@ -12,7 +12,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NavbarComponent } from './components/shared/navbar/navbar.component';
 import { HomeComponent } from './components/home/home.component';
 import { FooterComponent } from './components/shared/footer/footer.component';
-import { FormularioComponent } from './components/formulario/formulario.component';
+import { ListComponent } from './components/list/list.component';
 
 //services
 import { WoloxServices } from './services/wolox.services'
@@ -31,7 +31,7 @@ import { MatSortModule } from '@angular/material/sort';
     NavbarComponent,
     HomeComponent,
     FooterComponent,
-    FormularioComponent,
+    ListComponent,
     LoginComponent    
   ],
   imports: [

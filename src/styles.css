@@ -1,4 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
+/**/
+
+ @font-face {
+    font-family: 'Fira_Sans';
+    src: url('assets/assets/Fonts/Fira_Sans/FiraSans-Regular.ttf') format('ttf'),
+    url('assets/assets/Fonts/Fira_Sans/FiraSans-Regular.ttf') format('ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
 .green {
     color: #A3CC39;
 }

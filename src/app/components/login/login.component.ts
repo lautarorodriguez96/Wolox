@@ -131,7 +131,6 @@ export class LoginComponent implements OnInit {
 
   capturarPais() {
     this.verSeleccion = this.paisSeleccionado;
-    console.log(this.verSeleccion, 'select')
     switch (this.verSeleccion) {
       case '1':
           this.provincia = this.argentina; 
@@ -148,24 +147,23 @@ export class LoginComponent implements OnInit {
       case '5':
         this.provincia = this.ecuador; 
         break;
-      default: ''
+      default: '0'
         break;
     }
   }
 
   capturarProvincia() {
     this.verProvinciaSeleccion = this.provinciaSeleccionada;
-    console.log(this.verProvinciaSeleccion, 'select')
   }
 
   crearFormulario() {
     this.formu = this.fb.group({
       nombre: ['', [Validators.required, Validators.maxLength(30)]],
       apellido: ['', [Validators.required, Validators.maxLength(30)]],
-      pais: ['', Validators.required],
+      pais: ['', Validators.required] ,
       provincia: ['', Validators.required],
       email: ['', [Validators.required, Validators.pattern('[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$')]],
-      telefono: ['', [Validators.required, Validators.maxLength(10)]],
+      telefono: ['', [Validators.required, Validators.pattern("[0-9 ]{10}")]],
       contrasenia: ['', [Validators.required, Validators.minLength(6)]],
       contrasenia2: ['', [Validators.required, Validators.minLength(6)]]
     }, {
@@ -186,7 +184,6 @@ export class LoginComponent implements OnInit {
   }
 
   guardar() {
-    console.log('result', this.formu)
     if (this.formu.invalid) {
       return Object.values(this.formu.controls).forEach(control => {
         if (control instanceof FormGroup) {
@@ -196,10 +193,9 @@ export class LoginComponent implements OnInit {
         }
       });
     }
-
     localStorage.setItem("formulario", JSON.stringify(this.formu.value));
 
-    /*this.formu.reset({
+    this.formu.reset({
       nombre: '',
       apellido: '',
       pais: '',
@@ -207,14 +203,15 @@ export class LoginComponent implements OnInit {
       email: '',
       telefono: '',
       contrasenia: ''
-    });*/
+    });
 
   }
 
   obtenerStorage() {
     let formulario = JSON.parse(localStorage.getItem("formulario"));
-    //let formulario = localStorage.getItem("formulario");
-    console.log('storage', formulario);
+    if (formulario != null) {
+      window.location.href = "/list";
+    }
   }
 
 }
