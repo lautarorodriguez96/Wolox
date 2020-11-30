@@ -40,29 +40,7 @@ export class ListComponent implements OnInit {
 
   favourite(element){
     this.favorite = element.tech;
-    console.log(this.favorite, 'favorito')
-    //localStorage.setItem("formulario", JSON.stringify(this.formu.value));
   }
-  
-
-  
-	/*deleteDestinatario(destinatario) {
-		this.tableDestinatariosExternos.splice(destinatario.row, 1);
-	}
-
-	addDestinatario() {
-		if (this.destinoDestinatario && this.usuarioDestinatario) {
-			let newDestinatario = {
-				usuario: this.usuarioDestinatario,
-				destino: this.destinoDestinatario,
-			};
-
-			this.destinoDestinatario = '';
-			this.usuarioDestinatario = '';
-
-			this.tableDestinatariosExternos.push(newDestinatario);
-		}
-	}*/
 
 }
 

@@ -66,16 +66,19 @@ tr.mat-row:hover {
   border: 1px solid #ddd;
   border-radius: 2px;
 }
+
 .login .input_textual {
   color: #444;
   font-size: 1.1em;
 }
+
 .login .input_textual:focus {
   outline: none;
   border: none;
   border-left: 13px solid #2AA7DF;
   box-shadow: 1px 5px 10px #CCC;
 }
+
 .login .input_textual:focus {
   opacity: 1;
   left: 30px;
@@ -97,4 +100,16 @@ tr.mat-row:hover {
   border: solid #337FED 2px;
   background: #337FED;
   border-radius: 100px;
+}
+
+.text {
+  font-weight: 400;
+  font-size: 20px;
+  margin-left: 40px;
+}
+
+.subtext {
+  font-weight: 400;
+  font-size: 15px;
+  margin-left: 40px;
 }

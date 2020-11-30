@@ -205,6 +205,8 @@ export class LoginComponent implements OnInit {
       contrasenia: ''
     });
 
+    window.location.href = "/list";
+
   }
 
   obtenerStorage() {
